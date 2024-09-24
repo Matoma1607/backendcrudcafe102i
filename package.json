@@ -1,0 +1,17 @@
+{
+  "name": "13-backencrudcafe",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongoDB",
+    "ExpressJS",
+    "Mongoose"
+  ],
+  "author": "Matias Salazar",
+  "license": "ISC",
+  "description": "Operaciones de CRUD para el backend del proyecto crud cafe"
+}
