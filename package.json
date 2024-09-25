@@ -14,5 +14,10 @@
   ],
   "author": "Matias Salazar",
   "license": "ISC",
-  "description": "Operaciones de CRUD para el backend del proyecto crud cafe"
+  "description": "Operaciones de CRUD para el backend del proyecto crud cafe",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "morgan": "^1.10.0"
+  }
 }
