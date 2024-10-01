@@ -22,3 +22,18 @@ export const crearProducto = async (req, res) => {
     });
   }
 };
+
+export const listarProductos = async(req, res)=>{
+  try {
+    //pedir a laBD la collection de productos
+    const productos = await Producto.find()
+    //enviar en la respuesta la lista de productos
+    res.status(200).json(productos);
+  } catch (error) {
+    //enviar un mensaje de error   
+    console.error(error);
+    res.status(404).json({
+      mensaje: "Ocurrio un error, no se encontraron los productos"
+    }) 
+  }
+}
