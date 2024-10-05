@@ -59,3 +59,24 @@ export const obtenerProducto = async(req, res)=>{
     }) 
   }
 }
+
+export const borrarProducto = async(req, res)=>{
+  try {
+    req.params.id
+    //quiero saber si está el ide, si no esta, contesto con un codigo de error
+    const productoBuscado = await Producto.findById(req.params.id)
+    if(!productoBuscado){
+      return res.status(404).json({
+        mensaje: "El producto no fue encontrado"
+      })
+    }
+    //le pido a laBD borrar el producto y envio la resp
+    await Producto.findByIdAndDelete(req.params.id)
+    res.status(200).json({mensaje:"El producto fue eliminado correctamente"})
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({
+      mensaje:"Ocurrio un error al intentar borrar un producto"
+    })
+  }
+}
